@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jpabook.jpashop.service.OrderServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-11-08T04:57:08" hostname="gimjehyeon-ui-MacBookPro.local" time="0.329">
+<testsuite name="jpabook.jpashop.service.OrderServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-11-08T05:10:59" hostname="gimjehyeon-ui-MacBookPro.local" time="0.326">
   <properties/>
-  <testcase name="상품주문_재고수량초과" classname="jpabook.jpashop.service.OrderServiceTest" time="0.319"/>
-  <testcase name="상품주문" classname="jpabook.jpashop.service.OrderServiceTest" time="0.005"/>
-  <testcase name="주문취소" classname="jpabook.jpashop.service.OrderServiceTest" time="0.003"/>
+  <testcase name="상품주문_재고수량초과" classname="jpabook.jpashop.service.OrderServiceTest" time="0.313"/>
+  <testcase name="상품주문" classname="jpabook.jpashop.service.OrderServiceTest" time="0.008"/>
+  <testcase name="주문취소" classname="jpabook.jpashop.service.OrderServiceTest" time="0.004"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,339 +13,339 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2023-11-08T13:57:07.009+09:00  INFO 4724 --- [    Test worker] j.jpashop.service.OrderServiceTest       : Starting OrderServiceTest using Java 17.0.8 with PID 4724 (started by kimjehyeon in /Users/kimjehyeon/Desktop/github/jpashop)
-2023-11-08T13:57:07.009+09:00  INFO 4724 --- [    Test worker] j.jpashop.service.OrderServiceTest       : No active profile set, falling back to 1 default profile: "default"
-2023-11-08T13:57:07.242+09:00  INFO 4724 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-08T13:57:07.251+09:00  INFO 4724 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2023-11-08T13:57:07.423+09:00  INFO 4724 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-08T13:57:07.500+09:00  INFO 4724 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661 user=SA
-2023-11-08T13:57:07.501+09:00  INFO 4724 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-08T13:57:07.519+09:00  INFO 4724 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-08T13:57:07.539+09:00  INFO 4724 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
-2023-11-08T13:57:07.540+09:00  INFO 4724 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-11-08T13:57:07.578+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@819fb19
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@819fb19
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@819fb19
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@782ac148
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@782ac148
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.BasicTypeReference@46d1b59
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@46d1b59
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@61d2f267
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@61d2f267
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@26d40c77
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@26d40c77
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@26d40c77
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BasicTypeReference@85ab964
-2023-11-08T13:57:07.579+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@85ab964
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BasicTypeReference@85ab964
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@14874a5d
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@14874a5d
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.BasicTypeReference@49cb5030
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BasicTypeReference@23c7cb18
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@23c7cb18
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@30fbc23
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@2d74cbbd
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@3e2d44f3
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@3e2d44f3
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@3e2d44f3
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.BasicTypeReference@23afc725
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.BasicTypeReference@23afc725
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@23afc725
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@5d3f99d7
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@5d3f99d7
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@5d3f99d7
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@561d88ee
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@561d88ee
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@561d88ee
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@2c34402
-2023-11-08T13:57:07.580+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@2c34402
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@2c34402
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@5f883d90
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@5f883d90
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@7e58f697
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@7e58f697
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.BasicTypeReference@44384b4a
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.BasicTypeReference@44384b4a
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@44384b4a
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@5cc3e49b
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.BasicTypeReference@4239262e
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@4239262e
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.BasicTypeReference@7bec8cb0
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.BasicTypeReference@7d88fa9c
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.BasicTypeReference@7d88fa9c
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.BasicTypeReference@7d88fa9c
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@3eac2e8a
-2023-11-08T13:57:07.581+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.BasicTypeReference@352f6727
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.BasicTypeReference@2ab9e43e
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.BasicTypeReference@10dfa7ef
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@10dfa7ef
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.BasicTypeReference@4fd80300
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@4fd80300
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@1805383
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@64fdcf99
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@9f0fc36
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@63f2e0b
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@5a06904
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@fabef2e
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.BasicTypeReference@1b4a3a1
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@1b4a3a1
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@7e848aea
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@7e848aea
-2023-11-08T13:57:07.582+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@786a3477
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@786a3477
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@286866cb
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@286866cb
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@ce561cc
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@ce561cc
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@56ec6960
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@7f8c3646
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@14b95942
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@14b95942
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@3375b118
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@667797f
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@184751f3
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@46ea78f0
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@46ea78f0
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@5889fc44
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@6598caab
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.BasicTypeReference@47f2c722
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@47f2c722
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.BasicTypeReference@52ca0ad4
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@52ca0ad4
-2023-11-08T13:57:07.583+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@4536a715
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@4536a715
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@4536a715
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.BasicTypeReference@6658f08a
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@6658f08a
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@6658f08a
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@37c2f0b4
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@35dcd032
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration instant -> org.hibernate.type.BasicTypeReference@4522d793
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@4522d793
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid -> org.hibernate.type.BasicTypeReference@64dfb31d
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@64dfb31d
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@64dfb31d
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@4438b862
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@17b6ad97
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.BasicTypeReference@44fb6ebd
-2023-11-08T13:57:07.584+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@44fb6ebd
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.BasicTypeReference@5da57a64
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Currency -> org.hibernate.type.BasicTypeReference@5da57a64
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@5da57a64
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.BasicTypeReference@5cdf221a
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@5cdf221a
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.BasicTypeReference@7e27f603
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@7e27f603
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.BasicTypeReference@6136e1fc
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@6136e1fc
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@1736c1e4
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@1736c1e4
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.BasicTypeReference@32dcfeea
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@32dcfeea
-2023-11-08T13:57:07.585+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.BasicTypeReference@738a815c
-2023-11-08T13:57:07.587+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.JavaObjectType@9f9146d
-2023-11-08T13:57:07.587+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@9f9146d
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -> org.hibernate.type.NullType@a9a8ec3
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@6d0114c0
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@40016ce1
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@203765b2
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@7e050be1
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@1b47b7f5
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@506aa618
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@4b6b5352
-2023-11-08T13:57:07.588+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@1d6713dd
-2023-11-08T13:57:07.596+09:00  INFO 4724 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-08T13:57:07.649+09:00  INFO 4724 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-11-08T13:57:07.681+09:00 DEBUG 4724 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NCharTypeDescriptor) replaced previous registration(CharTypeDescriptor)
-2023-11-08T13:57:07.681+09:00 DEBUG 4724 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NVarcharTypeDescriptor) replaced previous registration(VarcharTypeDescriptor)
-2023-11-08T13:57:07.681+09:00 DEBUG 4724 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(LongNVarcharTypeDescriptor) replaced previous registration(LongVarcharTypeDescriptor)
-2023-11-08T13:57:07.682+09:00 DEBUG 4724 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NClobTypeDescriptor(DEFAULT)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
-2023-11-08T13:57:07.682+09:00 DEBUG 4724 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2005, ClobTypeDescriptor(STREAM_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
-2023-11-08T13:57:07.683+09:00 DEBUG 4724 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(TimestampUtcDescriptor) replaced previous registration(TimestampUtcDescriptor)
-2023-11-08T13:57:07.685+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> basicType@1(java.time.Duration,2)
-2023-11-08T13:57:07.685+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> basicType@1(java.time.Duration,2)
-2023-11-08T13:57:07.686+09:00 DEBUG 4724 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@93ce24d] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@d949bc4]
-2023-11-08T13:57:07.780+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419427780 | took 3ms | statement | connection 2| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:58.265+09:00  INFO 7813 --- [    Test worker] j.jpashop.service.OrderServiceTest       : Starting OrderServiceTest using Java 17.0.8 with PID 7813 (started by kimjehyeon in /Users/kimjehyeon/Desktop/github/jpashop)
+2023-11-08T14:10:58.266+09:00  INFO 7813 --- [    Test worker] j.jpashop.service.OrderServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-11-08T14:10:58.517+09:00  INFO 7813 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-08T14:10:58.527+09:00  INFO 7813 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-11-08T14:10:58.705+09:00  INFO 7813 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-08T14:10:58.785+09:00  INFO 7813 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3 user=SA
+2023-11-08T14:10:58.786+09:00  INFO 7813 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-08T14:10:58.804+09:00  INFO 7813 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-08T14:10:58.826+09:00  INFO 7813 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-11-08T14:10:58.827+09:00  INFO 7813 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@49cb5030
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@49cb5030
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@49cb5030
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@23c7cb18
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@23c7cb18
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.BasicTypeReference@30fbc23
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@30fbc23
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@2d74cbbd
+2023-11-08T14:10:58.868+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@2d74cbbd
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@3e2d44f3
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@3e2d44f3
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@3e2d44f3
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BasicTypeReference@23afc725
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@23afc725
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BasicTypeReference@23afc725
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@2c34402
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@2c34402
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.BasicTypeReference@5f883d90
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BasicTypeReference@7e58f697
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@7e58f697
+2023-11-08T14:10:58.869+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@44384b4a
+2023-11-08T14:10:58.870+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@5cc3e49b
+2023-11-08T14:10:58.870+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@4239262e
+2023-11-08T14:10:58.870+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@4239262e
+2023-11-08T14:10:58.870+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@4239262e
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.BasicTypeReference@7bec8cb0
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.BasicTypeReference@7bec8cb0
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@7bec8cb0
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@7d88fa9c
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@7d88fa9c
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@7d88fa9c
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@3eac2e8a
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@3eac2e8a
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@3eac2e8a
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@352f6727
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@352f6727
+2023-11-08T14:10:58.871+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@352f6727
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@2ab9e43e
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@2ab9e43e
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@10dfa7ef
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@10dfa7ef
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.BasicTypeReference@4fd80300
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.BasicTypeReference@4fd80300
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@4fd80300
+2023-11-08T14:10:58.872+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@1805383
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.BasicTypeReference@64fdcf99
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@64fdcf99
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.BasicTypeReference@9f0fc36
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.BasicTypeReference@63f2e0b
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.BasicTypeReference@63f2e0b
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.BasicTypeReference@63f2e0b
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@5a06904
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.BasicTypeReference@fabef2e
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.BasicTypeReference@1b4a3a1
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.BasicTypeReference@7e848aea
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@7e848aea
+2023-11-08T14:10:58.873+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.BasicTypeReference@786a3477
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@786a3477
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@286866cb
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@ce561cc
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@56ec6960
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@7f8c3646
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@14b95942
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@3375b118
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.BasicTypeReference@667797f
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@667797f
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@184751f3
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@184751f3
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@46ea78f0
+2023-11-08T14:10:58.874+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@46ea78f0
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@5889fc44
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@5889fc44
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@6598caab
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@6598caab
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@47f2c722
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@52ca0ad4
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@4536a715
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@4536a715
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@6658f08a
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@37c2f0b4
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@35dcd032
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@4522d793
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@4522d793
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@64dfb31d
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@4438b862
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.BasicTypeReference@17b6ad97
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@17b6ad97
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.BasicTypeReference@44fb6ebd
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@44fb6ebd
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@5da57a64
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@5da57a64
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@5da57a64
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.BasicTypeReference@5cdf221a
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@5cdf221a
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@5cdf221a
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@7e27f603
+2023-11-08T14:10:58.875+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@6136e1fc
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration instant -> org.hibernate.type.BasicTypeReference@1736c1e4
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@1736c1e4
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid -> org.hibernate.type.BasicTypeReference@32dcfeea
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@32dcfeea
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@32dcfeea
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@738a815c
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@2565a7d0
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.BasicTypeReference@4fd7b79
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@4fd7b79
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.BasicTypeReference@5103eea2
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Currency -> org.hibernate.type.BasicTypeReference@5103eea2
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@5103eea2
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.BasicTypeReference@762405bf
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@762405bf
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.BasicTypeReference@7e77678c
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@7e77678c
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.BasicTypeReference@113eed88
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@113eed88
+2023-11-08T14:10:58.876+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@5f0677f3
+2023-11-08T14:10:58.877+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@5f0677f3
+2023-11-08T14:10:58.877+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.BasicTypeReference@9d99851
+2023-11-08T14:10:58.877+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@9d99851
+2023-11-08T14:10:58.877+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.BasicTypeReference@4cd7d5e1
+2023-11-08T14:10:58.880+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.JavaObjectType@51af8049
+2023-11-08T14:10:58.880+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@51af8049
+2023-11-08T14:10:58.880+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -> org.hibernate.type.NullType@3b39e79b
+2023-11-08T14:10:58.880+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@3ee6dc82
+2023-11-08T14:10:58.880+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@2f86f9cf
+2023-11-08T14:10:58.880+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@adafe19
+2023-11-08T14:10:58.881+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@7e2bd5e6
+2023-11-08T14:10:58.881+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@76a1146d
+2023-11-08T14:10:58.881+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@6ef1c3f7
+2023-11-08T14:10:58.881+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@3386c206
+2023-11-08T14:10:58.881+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@1322b575
+2023-11-08T14:10:58.894+09:00  INFO 7813 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-08T14:10:58.945+09:00  INFO 7813 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-08T14:10:58.971+09:00 DEBUG 7813 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NCharTypeDescriptor) replaced previous registration(CharTypeDescriptor)
+2023-11-08T14:10:58.971+09:00 DEBUG 7813 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NVarcharTypeDescriptor) replaced previous registration(VarcharTypeDescriptor)
+2023-11-08T14:10:58.972+09:00 DEBUG 7813 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(LongNVarcharTypeDescriptor) replaced previous registration(LongVarcharTypeDescriptor)
+2023-11-08T14:10:58.972+09:00 DEBUG 7813 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NClobTypeDescriptor(DEFAULT)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2023-11-08T14:10:58.972+09:00 DEBUG 7813 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2005, ClobTypeDescriptor(STREAM_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2023-11-08T14:10:58.973+09:00 DEBUG 7813 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(TimestampUtcDescriptor) replaced previous registration(TimestampUtcDescriptor)
+2023-11-08T14:10:58.975+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> basicType@1(java.time.Duration,2)
+2023-11-08T14:10:58.975+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> basicType@1(java.time.Duration,2)
+2023-11-08T14:10:58.976+09:00 DEBUG 7813 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@29c25bbc] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@30704f85]
+2023-11-08T14:10:59.065+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259065 | took 2ms | statement | connection 2| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select * from INFORMATION_SCHEMA.SEQUENCES
 select * from INFORMATION_SCHEMA.SEQUENCES;
-2023-11-08T13:57:07.786+09:00  INFO 4724 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-08T13:57:08.092+09:00  INFO 4724 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-08T13:57:08.092+09:00 DEBUG 4724 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@93ce24d] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@726e29d]
-2023-11-08T13:57:08.099+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists category cascade 
-2023-11-08T13:57:08.099+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428099 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.071+09:00  INFO 7813 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-08T14:10:59.380+09:00  INFO 7813 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-08T14:10:59.380+09:00 DEBUG 7813 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@29c25bbc] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@7e27b77a]
+2023-11-08T14:10:59.386+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists category cascade 
+2023-11-08T14:10:59.386+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259386 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists category cascade 
 drop table if exists category cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists category_item cascade 
-2023-11-08T13:57:08.100+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428100 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.386+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists category_item cascade 
+2023-11-08T14:10:59.388+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259387 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists category_item cascade 
 drop table if exists category_item cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists delivery cascade 
-2023-11-08T13:57:08.100+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428100 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.388+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists delivery cascade 
+2023-11-08T14:10:59.388+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259388 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists delivery cascade 
 drop table if exists delivery cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists item cascade 
-2023-11-08T13:57:08.100+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428100 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.388+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists item cascade 
+2023-11-08T14:10:59.388+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259388 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists item cascade 
 drop table if exists item cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists member cascade 
-2023-11-08T13:57:08.100+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428100 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.388+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists member cascade 
+2023-11-08T14:10:59.388+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259388 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists member cascade 
 drop table if exists member cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists order_item cascade 
-2023-11-08T13:57:08.100+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428100 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.389+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists order_item cascade 
+2023-11-08T14:10:59.389+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259389 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists order_item cascade 
 drop table if exists order_item cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop table if exists orders cascade 
-2023-11-08T13:57:08.100+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428100 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.389+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop table if exists orders cascade 
+2023-11-08T14:10:59.389+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259389 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop table if exists orders cascade 
 drop table if exists orders cascade ;
-2023-11-08T13:57:08.100+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists delivery_seq
-2023-11-08T13:57:08.101+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428101 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.389+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists delivery_seq
+2023-11-08T14:10:59.389+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259389 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop sequence if exists delivery_seq
 drop sequence if exists delivery_seq;
-2023-11-08T13:57:08.101+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists item_seq
-2023-11-08T13:57:08.101+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428101 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.389+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists item_seq
+2023-11-08T14:10:59.389+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259389 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop sequence if exists item_seq
 drop sequence if exists item_seq;
-2023-11-08T13:57:08.101+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists member_seq
-2023-11-08T13:57:08.101+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428101 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.389+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists member_seq
+2023-11-08T14:10:59.390+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259390 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop sequence if exists member_seq
 drop sequence if exists member_seq;
-2023-11-08T13:57:08.101+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists order_item_seq
-2023-11-08T13:57:08.101+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428101 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.390+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists order_item_seq
+2023-11-08T14:10:59.390+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259390 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop sequence if exists order_item_seq
 drop sequence if exists order_item_seq;
-2023-11-08T13:57:08.101+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists orders_seq
-2023-11-08T13:57:08.101+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428101 | took 0ms | statement | connection 3| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.390+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : drop sequence if exists orders_seq
+2023-11-08T14:10:59.390+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259390 | took 0ms | statement | connection 3| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 drop sequence if exists orders_seq
 drop sequence if exists orders_seq;
-2023-11-08T13:57:08.104+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create sequence delivery_seq start with 1 increment by 50
-2023-11-08T13:57:08.104+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428104 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.393+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create sequence delivery_seq start with 1 increment by 50
+2023-11-08T14:10:59.394+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259394 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create sequence delivery_seq start with 1 increment by 50
 create sequence delivery_seq start with 1 increment by 50;
-2023-11-08T13:57:08.105+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create sequence item_seq start with 1 increment by 50
-2023-11-08T13:57:08.105+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428105 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.394+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create sequence item_seq start with 1 increment by 50
+2023-11-08T14:10:59.394+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259394 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create sequence item_seq start with 1 increment by 50
 create sequence item_seq start with 1 increment by 50;
-2023-11-08T13:57:08.105+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create sequence member_seq start with 1 increment by 50
-2023-11-08T13:57:08.105+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428105 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.394+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create sequence member_seq start with 1 increment by 50
+2023-11-08T14:10:59.394+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259394 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create sequence member_seq start with 1 increment by 50
 create sequence member_seq start with 1 increment by 50;
-2023-11-08T13:57:08.105+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create sequence order_item_seq start with 1 increment by 50
-2023-11-08T13:57:08.105+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428105 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.394+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create sequence order_item_seq start with 1 increment by 50
+2023-11-08T14:10:59.394+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259394 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create sequence order_item_seq start with 1 increment by 50
 create sequence order_item_seq start with 1 increment by 50;
-2023-11-08T13:57:08.105+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create sequence orders_seq start with 1 increment by 50
-2023-11-08T13:57:08.105+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428105 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.394+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create sequence orders_seq start with 1 increment by 50
+2023-11-08T14:10:59.395+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259395 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create sequence orders_seq start with 1 increment by 50
 create sequence orders_seq start with 1 increment by 50;
-2023-11-08T13:57:08.106+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id))
-2023-11-08T13:57:08.108+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428108 | took 1ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.396+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id))
+2023-11-08T14:10:59.398+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259398 | took 1ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id))
 create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id));
-2023-11-08T13:57:08.108+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table category_item (category_id bigint not null, item_id bigint not null)
-2023-11-08T13:57:08.108+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428108 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.398+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table category_item (category_id bigint not null, item_id bigint not null)
+2023-11-08T14:10:59.398+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259398 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table category_item (category_id bigint not null, item_id bigint not null)
 create table category_item (category_id bigint not null, item_id bigint not null);
-2023-11-08T13:57:08.109+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','COMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id))
-2023-11-08T13:57:08.110+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428110 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.398+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','COMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id))
+2023-11-08T14:10:59.399+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259399 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','COMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id))
 create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','COMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id));
-2023-11-08T13:57:08.110+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), author varchar(255), director varchar(255), isbn varchar(255), name varchar(255), primary key (item_id))
-2023-11-08T13:57:08.110+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428110 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.399+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), author varchar(255), director varchar(255), isbn varchar(255), name varchar(255), primary key (item_id))
+2023-11-08T14:10:59.400+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259400 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), author varchar(255), director varchar(255), isbn varchar(255), name varchar(255), primary key (item_id))
 create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), author varchar(255), director varchar(255), isbn varchar(255), name varchar(255), primary key (item_id));
-2023-11-08T13:57:08.110+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table member ("member_id" bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key ("member_id"))
-2023-11-08T13:57:08.111+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428111 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.400+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table member ("member_id" bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key ("member_id"))
+2023-11-08T14:10:59.401+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259401 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table member ("member_id" bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key ("member_id"))
 create table member ("member_id" bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key ("member_id"));
-2023-11-08T13:57:08.111+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id))
-2023-11-08T13:57:08.111+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428111 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.401+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id))
+2023-11-08T14:10:59.401+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259401 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id))
 create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id));
-2023-11-08T13:57:08.111+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id))
-2023-11-08T13:57:08.112+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428112 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.402+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id))
+2023-11-08T14:10:59.403+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259403 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id))
 create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id));
-2023-11-08T13:57:08.112+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category
-2023-11-08T13:57:08.115+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428115 | took 2ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.403+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category
+2023-11-08T14:10:59.405+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259405 | took 1ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category
 alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category;
-2023-11-08T13:57:08.115+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item
-2023-11-08T13:57:08.115+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428115 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.405+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item
+2023-11-08T14:10:59.406+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259406 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item
 alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item;
-2023-11-08T13:57:08.115+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category
-2023-11-08T13:57:08.116+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428116 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.406+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category
+2023-11-08T14:10:59.407+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259407 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category
 alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category;
-2023-11-08T13:57:08.116+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item
-2023-11-08T13:57:08.117+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428117 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.407+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item
+2023-11-08T14:10:59.407+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259407 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item
 alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item;
-2023-11-08T13:57:08.117+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders
-2023-11-08T13:57:08.117+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428117 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.407+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders
+2023-11-08T14:10:59.408+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259408 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders
 alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders;
-2023-11-08T13:57:08.117+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery
-2023-11-08T13:57:08.118+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428118 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.408+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery
+2023-11-08T14:10:59.408+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259408 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery
 alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery;
-2023-11-08T13:57:08.118+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member
-2023-11-08T13:57:08.119+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428119 | took 0ms | statement | connection 4| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.409+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member
+2023-11-08T14:10:59.409+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259409 | took 0ms | statement | connection 4| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member
 alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member;
-2023-11-08T13:57:08.120+09:00 TRACE 4724 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@726e29d] for TypeConfiguration
-2023-11-08T13:57:08.120+09:00  INFO 4724 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-08T13:57:08.214+09:00  WARN 4724 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-08T13:57:08.354+09:00  INFO 4724 --- [    Test worker] j.jpashop.service.OrderServiceTest       : Started OrderServiceTest in 1.452 seconds (process running for 1.869)
-2023-11-08T13:57:08.663+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for member_seq
-2023-11-08T13:57:08.664+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428664 | took 0ms | statement | connection 5| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.411+09:00 TRACE 7813 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@7e27b77a] for TypeConfiguration
+2023-11-08T14:10:59.411+09:00  INFO 7813 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-08T14:10:59.528+09:00  WARN 7813 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-08T14:10:59.673+09:00  INFO 7813 --- [    Test worker] j.jpashop.service.OrderServiceTest       : Started OrderServiceTest in 1.517 seconds (process running for 1.936)
+2023-11-08T14:10:59.973+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for member_seq
+2023-11-08T14:10:59.975+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259975 | took 0ms | statement | connection 5| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for member_seq
 select next value for member_seq;
-2023-11-08T13:57:08.673+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for item_seq
-2023-11-08T13:57:08.674+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428674 | took 0ms | statement | connection 5| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.985+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for item_seq
+2023-11-08T14:10:59.986+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259986 | took 0ms | statement | connection 5| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for item_seq
 select next value for item_seq;
-2023-11-08T13:57:08.679+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428679 | took 0ms | rollback | connection 5| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.992+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259992 | took 0ms | rollback | connection 5| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 
 ;
-2023-11-08T13:57:08.683+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for member_seq
-2023-11-08T13:57:08.683+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428683 | took 0ms | statement | connection 6| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.996+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for member_seq
+2023-11-08T14:10:59.996+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259996 | took 0ms | statement | connection 6| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for member_seq
 select next value for member_seq;
-2023-11-08T13:57:08.683+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for item_seq
-2023-11-08T13:57:08.683+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428683 | took 0ms | statement | connection 6| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.997+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for item_seq
+2023-11-08T14:10:59.997+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259997 | took 0ms | statement | connection 6| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for item_seq
 select next value for item_seq;
-2023-11-08T13:57:08.684+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for orders_seq
-2023-11-08T13:57:08.684+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428684 | took 0ms | statement | connection 6| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.998+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for orders_seq
+2023-11-08T14:10:59.998+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259998 | took 0ms | statement | connection 6| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for orders_seq
 select next value for orders_seq;
-2023-11-08T13:57:08.684+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for delivery_seq
-2023-11-08T13:57:08.685+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428685 | took 0ms | statement | connection 6| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:10:59.999+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for delivery_seq
+2023-11-08T14:10:59.999+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420259999 | took 0ms | statement | connection 6| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for delivery_seq
 select next value for delivery_seq;
-2023-11-08T13:57:08.686+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for order_item_seq
-2023-11-08T13:57:08.686+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428686 | took 0ms | statement | connection 6| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:11:00.000+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for order_item_seq
+2023-11-08T14:11:00.000+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420260000 | took 0ms | statement | connection 6| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for order_item_seq
 select next value for order_item_seq;
-2023-11-08T13:57:08.687+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428687 | took 0ms | rollback | connection 6| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:11:00.002+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420260002 | took 0ms | rollback | connection 6| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 
 ;
-2023-11-08T13:57:08.689+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for orders_seq
-2023-11-08T13:57:08.689+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428689 | took 0ms | statement | connection 7| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:11:00.004+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for orders_seq
+2023-11-08T14:11:00.005+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420260005 | took 0ms | statement | connection 7| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for orders_seq
 select next value for orders_seq;
-2023-11-08T13:57:08.689+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for delivery_seq
-2023-11-08T13:57:08.690+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428690 | took 0ms | statement | connection 7| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:11:00.005+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for delivery_seq
+2023-11-08T14:11:00.005+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420260005 | took 0ms | statement | connection 7| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for delivery_seq
 select next value for delivery_seq;
-2023-11-08T13:57:08.690+09:00 DEBUG 4724 --- [    Test worker] org.hibernate.SQL                        : select next value for order_item_seq
-2023-11-08T13:57:08.690+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428690 | took 0ms | statement | connection 7| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:11:00.005+09:00 DEBUG 7813 --- [    Test worker] org.hibernate.SQL                        : select next value for order_item_seq
+2023-11-08T14:11:00.005+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420260005 | took 0ms | statement | connection 7| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 select next value for order_item_seq
 select next value for order_item_seq;
-2023-11-08T13:57:08.691+09:00  INFO 4724 --- [    Test worker] p6spy                                    : #1699419428691 | took 0ms | rollback | connection 7| url jdbc:h2:mem:15b40b95-2b90-4e96-9035-27386c9d4661
+2023-11-08T14:11:00.006+09:00  INFO 7813 --- [    Test worker] p6spy                                    : #1699420260006 | took 0ms | rollback | connection 7| url jdbc:h2:mem:79394d5b-9aa7-4223-a007-5dc751391bf3
 
 ;
 ]]></system-out>
